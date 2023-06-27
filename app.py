@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-    with os.popen("./scrapy_list.sh", stdout=subprocess.PIPE, shell=True) as f:
+    with os.popen("./scrapy_list.sh") as f:
         str = f.readlines()
     return str         #"Hello World!"
 
