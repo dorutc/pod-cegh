@@ -7,5 +7,5 @@ with os.popen("cd cegh_doru;scrapy list") as f:
 print(type(str))
 for x in str:
     x = x.x.strip("\n")
-	res = os.system("scrapy crawl " + x)
+    res = os.system("scrapy crawl " + x)
     print(x)
