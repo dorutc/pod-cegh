@@ -8,7 +8,7 @@ def hello():
     os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
     with os.popen("cd cegh_doru;scrapy list") as f:
         str = f.readlines()
-    return "Hello World!"         #
+    return str      #"Hello World!" 
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
