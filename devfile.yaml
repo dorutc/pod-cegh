@@ -14,8 +14,8 @@ metadata:
     - Python
     - Pip
     - Flask
-  supportUrl: 
-  attributes: https://anatoma.ro
+  supportUrl: https://anatoma.ro
+  attributes: 
     alpha.dockerimage-port: 8081
 parent:
   id: python
