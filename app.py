@@ -6,8 +6,9 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-    #p = subprocess.Popen("./scrapy_list.sh", stdout=subprocess.PIPE, shell=True)
-    return "Hello World!"          #type(p.communicate())
+    with os.popen("./scrapy_list.sh", stdout=subprocess.PIPE, shell=True) as f:
+        str = f.readlines()
+    return str         #"Hello World!"
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
