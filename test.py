@@ -6,4 +6,4 @@ with os.popen("cd cegh_doru;scrapy list") as f:
     str = f.readlines()
 print(type(str))
 for x in str:
-   print(x)
+   print(x.strip("\n")
