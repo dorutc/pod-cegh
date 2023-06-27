@@ -2,5 +2,6 @@
 import os
 
 os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-str = os.system("cd cegh_doru;scrapy list")
+with os.popen("cd cegh_doru;scrapy list") as f:
+    str = f.readlines()
 print(type(str))
