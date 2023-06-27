@@ -7,9 +7,8 @@ app = Flask(__name__)
 def hello():
     try:
         os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-        str = "Hello World!" 
-        #str = os.system("pwd")
-        return str      #"Hello World!" 
+        str = os.system("cd cegh_doru;scrapy list")
+        return "Hello World!" 
     except Exception as error:
         return error
 
