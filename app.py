@@ -6,9 +6,9 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-    with os.popen("cd cegh_doru | scrapy list") as f:
+    with os.popen("cd cegh_doru;scrapy list") as f:
         str = f.readlines()
-    return str         #"Hello World!"
+    return "Hello World!"         #
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
