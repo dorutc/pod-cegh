@@ -18,6 +18,6 @@ RUN \
     then pip install -r *.txt; \
   fi
 
-RUN "chmod +x scrapy_list.sh"
+RUN chmod +x scrapy_list.sh
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
