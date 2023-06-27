@@ -1,12 +1,11 @@
 from flask import Flask
 import os
-import subprocess
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    p = subprocess.run("rm -rf /opt/app-root/src/doru/files_downloads/*")
+    os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
     #p = subprocess.Popen("./scrapy_list.sh", stdout=subprocess.PIPE, shell=True)
     return "Hello World!"          #type(p.communicate())
 
