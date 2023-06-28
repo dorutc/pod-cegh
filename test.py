@@ -23,7 +23,7 @@ def do_multiple(src):
                 if x == y:
                     w_l += l_list[i]
                 w_l += ";"
-         dest.write(w_l + "\n")
+        dest.write(w_l + "\n")
     dest.close()		 
 
 
