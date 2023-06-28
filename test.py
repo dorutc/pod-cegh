@@ -10,11 +10,12 @@ str_date = today.strftime("%d%m%Y")
 
 def do_multiple(src):
     src1 = path + src
-    print(src)
     f = open(src1, "r")
     dest1 = open(path + "all_" + str_date,"a")
     h = f.readline()
     h_list = h.split(";")
+    print("h_list")
+    print(h_list)
     for l in f:
         w_l = ""
         l_list = l.split(";")
@@ -27,7 +28,8 @@ def do_multiple(src):
         w_l += ";"
         w_l += src
         dest1.write(w_l + "\n")
-    dest1.close()		 
+    dest1.close()
+    f.close()	
 
 
 os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
