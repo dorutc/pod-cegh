@@ -17,4 +17,4 @@ for x in str:
 
 
 f_list = os.listdir("/opt/app-root/src/doru/files_downloads")
-print(type(f_list)
+print(type(f_list))
