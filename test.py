@@ -1,9 +1,12 @@
 
 import os
 
+path = "/opt/app-root/src/doru/files_downloads/"
+
 def do_multiple(src):
-    f = open(src, "r")
-    prinf(f.readline())
+    src1 = path + src
+    f = open(src1, "r")
+    print(f.readline())
 
 
 os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
@@ -16,6 +19,9 @@ for x in str:
     print(x)
 
 
-f_list = os.listdir("/opt/app-root/src/doru/files_downloads")
+f_list = os.listdir()
 print(type(f_list))
 print(f_list)
+
+for x in f_list:
+    do_multiple(x)
