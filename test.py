@@ -19,7 +19,7 @@ for x in str:
     print(x)
 
 
-f_list = os.listdir()
+f_list = os.listdir(path)
 print(type(f_list))
 print(f_list)
 
