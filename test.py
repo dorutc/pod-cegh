@@ -5,6 +5,7 @@ path = "/opt/app-root/src/doru/files_downloads/"
 
 def do_multiple(src):
     src1 = path + src
+    print(src)
     f = open(src1, "r")
     print(f.readline())
 
