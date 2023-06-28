@@ -11,21 +11,20 @@ def do_multiple(src):
     src1 = path + src
     print(src)
     f = open(src1, "r")
-	dest = open(path + "all_" + str_date + ".csv","a")
-	h = f.readline()
+    dest = open(path + "all_" + str_date + ".csv","a")
+    h = f.readline()
     h_list = h.split(";")
-	
 	for l in f:
         w_l = ""
         l_list = l.split(";")
-		for x in header:
+        for x in header:
             i = 0
             for y in h_list:
                 if x == y:
                     w_l += l_list[i]
                  w_l += ";"
          dest.write(w_l + "\n")
-    des.close()		 
+    dest.close()		 
 
 
 os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
