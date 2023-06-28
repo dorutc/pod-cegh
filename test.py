@@ -1,5 +1,6 @@
 
 import os
+from datetime import date
 
 path = "/opt/app-root/src/doru/files_downloads/"
 header = ['Trading Day', 'Contract', 'Open', 'High', 'Low', 'Close', 'Trades', 'CEGHEDI', 'VWAP', 'CEGHIX', 'Settlement Price', 'Last Price', 'Price €/MWh', 'Product', 'Trading phase', 'Volume acc.']
