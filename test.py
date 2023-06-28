@@ -12,7 +12,7 @@ def do_multiple(src):
     src1 = path + src
     print(src)
     f = open(src1, "r")
-    dest = open(path + "all_" + str_date,"a")
+    dest1 = open(path + "all_" + str_date,"a")
     h = f.readline()
     h_list = h.split(";")
     for l in f:
@@ -24,8 +24,9 @@ def do_multiple(src):
                 if x == y:
                     w_l += l_list[i]
                 w_l += ";"
-        dest.write(w_l + "\n")
-    dest.close()		 
+        w_l += src
+        dest1.write(w_l + "\n")
+    dest1.close()		 
 
 
 os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
@@ -45,5 +46,5 @@ dest.close()
 print(f_list)
 
 
-#for x in f_list:
-#    do_multiple(x)
+for x in f_list:
+    do_multiple(x)
