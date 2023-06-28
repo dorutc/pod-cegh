@@ -37,12 +37,11 @@ for x in str:
     res = os.system("cd cegh_doru;scrapy crawl " + x)
     print(x)
 
-
+f_list = os.listdir(path)
+print(type(f_list))
 dest = open(path + "all_" + str_date + ".csv","a")
 dest.write(header_line)
 dest.close()
-f_list = os.listdir(path)
-print(type(f_list))
 print(f_list)
 
 
