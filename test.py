@@ -22,7 +22,7 @@ def do_multiple(src):
             for y in h_list:
                 if x == y:
                     w_l += l_list[i]
-                 w_l += ";"
+                w_l += ";"
          dest.write(w_l + "\n")
     dest.close()		 
 
