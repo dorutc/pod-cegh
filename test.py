@@ -12,7 +12,7 @@ def do_multiple(src):
     src1 = path + src
     print(src)
     f = open(src1, "r")
-    dest = open(path + "all_" + str_date + ".csv","a")
+    dest = open(path + "all_" + str_date,"a")
     h = f.readline()
     h_list = h.split(";")
     for l in f:
@@ -39,11 +39,11 @@ for x in str:
 
 f_list = os.listdir(path)
 print(type(f_list))
-dest = open(path + "all_" + str_date + ".csv","a")
+dest = open(path + "all_" + str_date,"a")
 dest.write(header_line)
 dest.close()
 print(f_list)
 
 
-for x in f_list:
-    do_multiple(x)
+#for x in f_list:
+#    do_multiple(x)
