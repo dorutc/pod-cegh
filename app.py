@@ -7,7 +7,11 @@ app = Flask(__name__)
 def hello():
     try:
         os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-        str = os.system("cd cegh_doru;scrapy list")
+        with os.popen("cd cegh_doru;scrapy list") as f:
+             str = f.readlines()
+        for x in str:
+            x = x.strip("\n")
+            res = os.system("cd cegh_doru;scrapy crawl " + x)
         return "Hello World!" 
     except Exception as error:
         return error
