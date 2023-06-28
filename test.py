@@ -14,7 +14,7 @@ def do_multiple(src):
     dest = open(path + "all_" + str_date + ".csv","a")
     h = f.readline()
     h_list = h.split(";")
-	for l in f:
+    for l in f:
         w_l = ""
         l_list = l.split(";")
         for x in header:
