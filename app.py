@@ -58,11 +58,16 @@ def do_all_work():
 
 @app.route('/')
 def hello():
+        return "Hello!"
+
+@app.route('/all')
+def do_all():
     try:
         do_crawl()
         return do_all_work()
     except Exception as error:
         return error
+
 
 @app.route('/dayahead')
 def dayahead():
