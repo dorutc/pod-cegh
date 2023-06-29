@@ -6,10 +6,11 @@ app = Flask(__name__)
 path = "/opt/app-root/src/doru/files_downloads/"
 header = ['Trading Day', 'Contract', 'Open', 'High', 'Low', 'Close', 'Trades', 'CEGHEDI', 'VWAP', 'CEGHIX', 'Settlement Price', 'Last Price', 'Price €/MWh', 'Product', 'Trading phase', 'Volume acc.']
 header_line = "Trading Day;Contract;Open;High;Low;Close;Trades;CEGHEDI;VWAP;CEGHIX;Settlement Price;Last Price;Price €/MWh;Product;Trading phase;Volume acc.;filename\n"
-today = date.today()
-str_date = today.strftime("%d%m%Y")
+
 
 def do_multiple(src):
+    today = date.today()
+    str_date = today.strftime("%d%m%Y")
     src1 = path + src
     f = open(src1, "r")
     dest1 = open(path + "all_" + str_date,"a")
@@ -43,6 +44,8 @@ def do_crawl():
             res = os.system("cd cegh_doru;scrapy crawl " + x)
 
 def do_all_work():
+        today = date.today()
+        str_date = today.strftime("%d%m%Y")
         f_list = os.listdir(path)
         dest = open(path + "all_" + str_date,"a")
         dest.write(header_line)
@@ -56,6 +59,19 @@ def do_all_work():
             page = page + l + "<br>"
         return "<html> <body>"  + page + "</body></html>"
 
+
+ def do_dayahead():
+    today = date.today()
+    str_date = today.strftime("%d%m%Y")
+    f_name = "AT_day-ahead_"
+    os.system("cd cegh_doru;scrapy crawl cegh_dayahead_csv")
+    f = open(path + f_name + str_date, "r")
+    page = ""
+    for l in f:
+        page = page + l + "<br>"
+    return "<html> <body>"  + page + "</body></html>"	
+
+
 @app.route('/all')
 def do_all():
     try:
@@ -67,7 +83,11 @@ def do_all():
 
 @app.route('/dayahead')
 def dayahead():
-    return "day ahead"
+    return do_dayahead()
+
+@app.route('/futures')
+def dayahead():
+    return "futures"
 
 @app.route('/')
 def hello():
