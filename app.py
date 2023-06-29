@@ -34,9 +34,7 @@ def do_multiple(src):
     dest1.close()
     f.close()	
 
-@app.route('/')
-def hello():
-    try:
+def do_crawl()
         os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
         with os.popen("cd cegh_doru;scrapy list") as f:
             str = f.readlines()
@@ -44,6 +42,7 @@ def hello():
             x = x.strip("\n")
             res = os.system("cd cegh_doru;scrapy crawl " + x)
 
+def do_all_work()
         f_list = os.listdir(path)
         dest = open(path + "all_" + str_date,"a")
         dest.write(header_line)
@@ -56,8 +55,19 @@ def hello():
         for l in f:
             page = page + l + "<br>"
         return "<html> <body>"  + page + "</body></html>"
+
+@app.route('/')
+def hello():
+    try:
+        do_crawl()
+        return do_all_work()
     except Exception as error:
         return error
+
+@app.route('/dayahead')
+def dayahead():
+    return "day ahead"
+
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
