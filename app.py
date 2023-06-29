@@ -74,7 +74,7 @@ def do_dayahead():
 def do_futures():
     today = date.today()
     str_date = today.strftime("%d%m%Y")   
-    page = ""
+    page = "Trading Day;Contract;Settlement Price;Last Price;Volume acc." + "<br>"
     with os.popen("ls " + path) as f:
         str = f.readlines()
     for x in str:
