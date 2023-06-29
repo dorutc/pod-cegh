@@ -80,7 +80,11 @@ def do_futures():
     for x in str:
         x = x.strip("\n")
         if "futures" in x:
-            page = page + x + "<br>"
+            ff = open(path + x,"r")
+            ff.readline()
+            for l in ff:
+                page = page + l.replace(",",".") + "<br>"
+ 
     return "<html> <body>"  + page + "</body></html>"
 
 
