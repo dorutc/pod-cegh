@@ -56,7 +56,7 @@ def do_all_work():
         page = ""
         f = open(path + "all_" + str_date,"r")
         for l in f:
-            page = page + l + "<br>"
+            page = page + l.replace(",",".") + "<br>"
         return "<html> <body>"  + page + "</body></html>"
 
 
@@ -68,8 +68,20 @@ def do_dayahead():
     f = open(path + f_name + str_date, "r")
     page = ""
     for l in f:
-        page = page + l + "<br>"
+        page = page + l.replace(",",".") + "<br>"
     return "<html> <body>"  + page + "</body></html>"	
+
+def do_futures():
+    today = date.today()
+    str_date = today.strftime("%d%m%Y")   
+    page = ""
+    with os.popen("ls path") as f:
+        str = f.readlines()
+    for x in str:
+        x = x.strip("\n")
+        if "futures" in x:
+            page = page + x + "<br>"
+    return "<html> <body>"  + page + "</body></html>"
 
 
 @app.route('/all')
@@ -87,7 +99,7 @@ def dayahead():
 
 @app.route('/futures')
 def futures():
-    return "futures"
+    return do_futures()
 
 @app.route('/')
 def hello():
