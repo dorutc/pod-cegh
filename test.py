@@ -17,15 +17,19 @@ def do_multiple(src):
     print("h_list")
     print(h_list)
     for l in f:
-        w_l = ""
+        w_list = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
         l_list = l.split(";")
-        for x in header:
-            i = 0
-            for y in h_list:
+        i = 0
+        for y in h_list:
+            j = 0
+            for x in header:
                 if x == y:
-                    w_l += l_list[i]
-                i = i + 1
-        w_l += ";"
+                    w_list[j]= l_list[i]
+                j = j + 1
+            i = i + 1
+        w_l = ""
+        for z in w_list:
+            w_l = w_l + z + ";"
         w_l += src
         dest1.write(w_l + "\n")
     dest1.close()
