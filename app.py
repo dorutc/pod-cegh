@@ -56,10 +56,6 @@ def do_all_work():
             page = page + l + "<br>"
         return "<html> <body>"  + page + "</body></html>"
 
-@app.route('/')
-def hello():
-        return "Hello!"
-
 @app.route('/all')
 def do_all():
     try:
@@ -72,6 +68,12 @@ def do_all():
 @app.route('/dayahead')
 def dayahead():
     return "day ahead"
+
+@app.route('/')
+def hello():
+        return "Hello!"
+
+
 
 
 if __name__ == '__main__':
