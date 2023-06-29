@@ -13,7 +13,7 @@ def hello():
         page = ""
         f = open(path + "all_" + str_date,"r")
         for l in f:
-            page = page + l
+            page = page + l + "<br>"
         return "<html> <body>"  + page + "</body></html>"
     except Exception as error:
         return error
