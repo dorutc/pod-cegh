@@ -14,8 +14,7 @@ def hello():
         f = open(path + "all_" + str_date,"r")
         for l in f:
             page = page + l
-        
-        return page 
+        return "hello" 
     except Exception as error:
         return error
 
