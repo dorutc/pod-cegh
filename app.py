@@ -34,7 +34,7 @@ def do_multiple(src):
     dest1.close()
     f.close()	
 
-def do_crawl()
+def do_crawl():
         os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
         with os.popen("cd cegh_doru;scrapy list") as f:
             str = f.readlines()
@@ -42,7 +42,7 @@ def do_crawl()
             x = x.strip("\n")
             res = os.system("cd cegh_doru;scrapy crawl " + x)
 
-def do_all_work()
+def do_all_work():
         f_list = os.listdir(path)
         dest = open(path + "all_" + str_date,"a")
         dest.write(header_line)
