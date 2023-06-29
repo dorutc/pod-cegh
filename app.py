@@ -86,7 +86,7 @@ def dayahead():
     return do_dayahead()
 
 @app.route('/futures')
-def dayahead():
+def futures():
     return "futures"
 
 @app.route('/')
