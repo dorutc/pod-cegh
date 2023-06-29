@@ -60,7 +60,7 @@ def do_all_work():
         return "<html> <body>"  + page + "</body></html>"
 
 
- def do_dayahead():
+def do_dayahead():
     today = date.today()
     str_date = today.strftime("%d%m%Y")
     f_name = "AT_day-ahead_"
