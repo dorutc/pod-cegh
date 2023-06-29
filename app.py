@@ -75,7 +75,7 @@ def do_futures():
     today = date.today()
     str_date = today.strftime("%d%m%Y")   
     page = ""
-    with os.popen("ls path") as f:
+    with os.popen("ls " + path) as f:
         str = f.readlines()
     for x in str:
         x = x.strip("\n")
@@ -99,6 +99,7 @@ def dayahead():
 
 @app.route('/futures')
 def futures():
+    do_crawl()
     return do_futures()
 
 @app.route('/')
