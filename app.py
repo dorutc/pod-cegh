@@ -10,12 +10,6 @@ path = "/opt/app-root/src/doru/files_downloads/"
 @app.route('/')
 def hello():
     try:
-        os.system("rm -rf /opt/app-root/src/doru/files_downloads/*")
-        with os.popen("cd cegh_doru;scrapy list") as f:
-             str = f.readlines()
-        for x in str:
-            x = x.strip("\n")
-            res = os.system("cd cegh_doru;scrapy crawl " + x)
         page = ""
         f = open(path + "all_" + str_date,"r")
         for l in f:
