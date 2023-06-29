@@ -1,7 +1,11 @@
 from flask import Flask
 import os
+from datetime import date
 
 app = Flask(__name__)
+today = date.today()
+str_date = today.strftime("%d%m%Y")
+path = "/opt/app-root/src/doru/files_downloads/"
 
 @app.route('/')
 def hello():
@@ -12,7 +16,12 @@ def hello():
         for x in str:
             x = x.strip("\n")
             res = os.system("cd cegh_doru;scrapy crawl " + x)
-        return "Hello World!" 
+        page = ""
+        f = open(path + "all_" + str_date,"r")
+        for l in f:
+            page = page + l
+        
+        return page 
     except Exception as error:
         return error
 
